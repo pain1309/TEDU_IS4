@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -26,24 +27,22 @@ namespace TestApiResource
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddAuthentication("Bearer")
-                    .AddJwtBearer("Bearer", options =>
+            services.AddAuthentication(options =>
+            {
+                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            })
+                    .AddJwtBearer(options =>
                     {
-                        options.Authority = "https://localhost:5000";
-                        options.RequireHttpsMetadata = true;
+                        options.Authority = "http://localhost:5000";
+                        options.RequireHttpsMetadata = false;
 
                         options.Audience = "test.api";
                     });
 
-            services.AddCors(options =>
+            services.AddAuthorization(options =>
             {
-                // this defines a CORS policy called "default"
-                options.AddPolicy("default", policy =>
-                {
-                    policy.WithOrigins("https://localhost:4200")
-                        .AllowAnyHeader()
-                        .AllowAnyMethod();
-                });
+                options.AddPolicy("ApiReader", policy => policy.RequireClaim("scope", "test.api"));
             });
 
         }
@@ -55,8 +54,8 @@ namespace TestApiResource
             {
                 app.UseDeveloperExceptionPage();
             }
+            app.UseCors(options => options.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
             app.UseAuthentication();
-            app.UseHttpsRedirection();
             app.UseRouting();
             app.UseAuthorization();
 

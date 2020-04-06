@@ -1,58 +1,46 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+
+// used to create fake backend
+import { FakeBackendProvider } from './shared/mocks/fake-backend-interceptor';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AuthCallbackComponent } from './auth-callback/auth-callback.component';
-import { HomeComponent } from './home/home.component';
-import { LogoutComponent } from './logout/logout.component';
-import { RouterModule, Routes } from '@angular/router';
-import { RegisterComponent } from './register/register.component';
-import { FormsModule } from '@angular/forms';
-import { NgxSpinnerModule } from 'ngx-spinner';
-import { HttpClientModule } from '@angular/common/http';
-import { ConfigService } from './_shared/config.service';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { LoginComponent } from './login/login.component';
-import { NavComponent } from './nav/nav.component';
-import { AuthGuard } from './_guard/auth.guard';
-import { AuthService } from './_services/auth.service';
-import { CallApiComponent } from './call-api/call-api.component';
 
-const appRoutes: Routes = [
-    { path: 'login', component: LoginComponent },
-    { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
-    { path: 'auth-callback', component: AuthCallbackComponent },
-    { path: 'logout', component: LogoutComponent },
-    { path: 'register', component: RegisterComponent },
-    {
-        path: 'call-api',
-        component: CallApiComponent,
-        canActivate: [AuthGuard]
-    }
-];
+import { ConfigService } from './shared/config.service';
+
+import { AuthCallbackComponent } from './auth-callback/auth-callback.component';
+
+/* Module Imports */
+import { CoreModule } from './core/core.module';
+import { HomeModule } from './home/home.module';
+import { AccountModule } from './account/account.module';
+import { ShellModule } from './shell/shell.module';
+import { TopSecretModule } from './top-secret/top-secret.module';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
-    declarations: [
-        AppComponent,
-        AuthCallbackComponent,
-        HomeComponent,
-        LogoutComponent,
-        RegisterComponent,
-        LoginComponent,
-        NavComponent,
-        CallApiComponent
-    ],
+    // an array of components, directives, and pipes
+    declarations: [AppComponent, AuthCallbackComponent],
+    // need to include other modules 
     imports: [
-        HttpClientModule,
-        FormsModule,
         BrowserModule,
-        RouterModule.forRoot(appRoutes),
+        HttpClientModule,
+        CoreModule,
+        HomeModule,
+        AccountModule,
+        TopSecretModule,
         AppRoutingModule,
-        NgxSpinnerModule,
-        BrowserAnimationsModule
+        ShellModule,
+        SharedModule
     ],
-    providers: [ConfigService, AuthGuard, AuthService],
+    // need to include the services
+    providers: [
+        ConfigService,
+        // provider used to create fake backend
+        FakeBackendProvider
+    ],
     bootstrap: [AppComponent]
 })
 export class AppModule {}

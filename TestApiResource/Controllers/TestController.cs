@@ -6,7 +6,7 @@ namespace TestApiResource.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize()]
+    [Authorize(Policy = "ApiReader")]
     public class TestController : ControllerBase
     {
         [HttpGet]
