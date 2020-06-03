@@ -6,11 +6,15 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using TestApiResource.Data;
+using TestApiResource.Data.Models;
 
 namespace TestApiResource
 {
@@ -26,7 +30,15 @@ namespace TestApiResource
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
+            services.AddControllers()
+                .AddJsonOptions(options => {
+                    // set this option to TRUE to indent the JSON output
+                    options.JsonSerializerOptions.WriteIndented = true;
+                    // set this option to NULL to use PascalCase instead of
+                    // camelCase (default)
+                    // options.JsonSerializerOptions.PropertyNamingPolicy =
+                    // null;
+                });
             services.AddAuthentication(options =>
             {
                 options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -39,6 +51,16 @@ namespace TestApiResource
 
                         options.Audience = "test.api";
                     });
+            // Add EntityFramework support for SqlServer.
+            services.AddEntityFrameworkSqlServer();
+
+            // Add ApplicationDbContext.
+            services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(
+                    Configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddIdentity<ApplicationUser, IdentityRole>()
+                .AddEntityFrameworkStores<ApplicationDbContext>()
+                .AddDefaultTokenProviders();
 
             services.AddAuthorization(options =>
             {

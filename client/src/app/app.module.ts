@@ -19,6 +19,10 @@ import { AccountModule } from './account/account.module';
 import { ShellModule } from './shell/shell.module';
 import { TopSecretModule } from './top-secret/top-secret.module';
 import { SharedModule } from './shared/shared.module';
+import { CitiesModule } from './cities/cities.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AngularMaterialModule } from './angular-material.module';
+import { CountriesModule } from './countries/countries.module';
 
 @NgModule({
     // an array of components, directives, and pipes
@@ -29,11 +33,15 @@ import { SharedModule } from './shared/shared.module';
         HttpClientModule,
         CoreModule,
         HomeModule,
+        CitiesModule,
+        CountriesModule,
         AccountModule,
         TopSecretModule,
         AppRoutingModule,
         ShellModule,
-        SharedModule
+        SharedModule,
+        BrowserAnimationsModule,
+        AngularMaterialModule
     ],
     // need to include the services
     providers: [

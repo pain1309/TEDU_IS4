@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "xbVoGgsIXvYJgFVmfUgYxp8xgd5Mhrq3tCkA/aWZ1hW3uyU95RrhLjiNE9FnjLgnUcE/dH77oeEBbBgcGJdnEA==",
+  "dgSpecHash": "1w4Kw/uDXocXGWZFQ5zntvyJAY/8m3QcyY1qc1PCAVrvRFBD27w0oeULd7UIMS1PPoatIxINosgiXDN7i1/tEg==",
   "success": true,
-  "projectFilePath": "D:\\IS4\\code\\TEDU_IS4\\IdentityMicroservice\\IdentityMicroservice.csproj",
+  "projectFilePath": "D:\\IS4\\code\\M_IS4\\IdentityMicroservice\\IdentityMicroservice.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\anhvv\\.nuget\\packages\\identitymodel\\4.1.1\\identitymodel.4.1.1.nupkg.sha512",
     "C:\\Users\\anhvv\\.nuget\\packages\\identityserver4\\3.1.0\\identityserver4.3.1.0.nupkg.sha512",

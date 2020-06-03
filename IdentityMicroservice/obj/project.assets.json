@@ -6788,7 +6788,7 @@
       ]
     },
     "System.Xml.XmlSerializer/4.3.0": {
-      "sha512": "VShQJhOxgD/5M2Z1IWm1vMaSqlbjo1zdFf8H7Ahte6bTvSUhUko/gDpAVVhGgGgTDeue4QyNg1fu1Zz2GKSEuQ==",
+      "sha512": "MYoTCP7EZ98RrANESW05J5ZwskKDoN0AuZ06ZflnowE50LTpbR5yRg3tHckTVm5j/m47stuGgCrCHWePyHS70Q==",
       "type": "package",
       "path": "system.xml.xmlserializer/4.3.0",
       "files": [
@@ -6881,11 +6881,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\IS4\\code\\TEDU_IS4\\IdentityMicroservice\\IdentityMicroservice.csproj",
+      "projectUniqueName": "D:\\IS4\\code\\M_IS4\\IdentityMicroservice\\IdentityMicroservice.csproj",
       "projectName": "IdentityMicroservice",
-      "projectPath": "D:\\IS4\\code\\TEDU_IS4\\IdentityMicroservice\\IdentityMicroservice.csproj",
+      "projectPath": "D:\\IS4\\code\\M_IS4\\IdentityMicroservice\\IdentityMicroservice.csproj",
       "packagesPath": "C:\\Users\\anhvv\\.nuget\\packages\\",
-      "outputPath": "D:\\IS4\\code\\TEDU_IS4\\IdentityMicroservice\\obj\\",
+      "outputPath": "D:\\IS4\\code\\M_IS4\\IdentityMicroservice\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\IS4\\code\\TEDU_IS4\\IdentityMicroservice\\IdentityMicroservice.csproj": {}
+    "D:\\IS4\\code\\M_IS4\\IdentityMicroservice\\IdentityMicroservice.csproj": {}
   },
   "projects": {
-    "D:\\IS4\\code\\TEDU_IS4\\IdentityMicroservice\\IdentityMicroservice.csproj": {
+    "D:\\IS4\\code\\M_IS4\\IdentityMicroservice\\IdentityMicroservice.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\IS4\\code\\TEDU_IS4\\IdentityMicroservice\\IdentityMicroservice.csproj",
+        "projectUniqueName": "D:\\IS4\\code\\M_IS4\\IdentityMicroservice\\IdentityMicroservice.csproj",
         "projectName": "IdentityMicroservice",
-        "projectPath": "D:\\IS4\\code\\TEDU_IS4\\IdentityMicroservice\\IdentityMicroservice.csproj",
+        "projectPath": "D:\\IS4\\code\\M_IS4\\IdentityMicroservice\\IdentityMicroservice.csproj",
         "packagesPath": "C:\\Users\\anhvv\\.nuget\\packages\\",
-        "outputPath": "D:\\IS4\\code\\TEDU_IS4\\IdentityMicroservice\\obj\\",
+        "outputPath": "D:\\IS4\\code\\M_IS4\\IdentityMicroservice\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
