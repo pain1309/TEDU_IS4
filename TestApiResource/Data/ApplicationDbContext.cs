@@ -23,6 +23,7 @@ namespace TestApiResource.Data
         #region Properties
         public DbSet<City> Cities { get; set; }
         public DbSet<Country> Countries { get; set; }
+        public DbSet<RrsVNExpress> RrsVNExpresss { get; set; }
         #endregion Properties
     }
 }

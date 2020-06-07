@@ -23,6 +23,8 @@ import { CitiesModule } from './cities/cities.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularMaterialModule } from './angular-material.module';
 import { CountriesModule } from './countries/countries.module';
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
+import { NewsModule } from './news/news.module';
 
 @NgModule({
     // an array of components, directives, and pipes
@@ -35,13 +37,15 @@ import { CountriesModule } from './countries/countries.module';
         HomeModule,
         CitiesModule,
         CountriesModule,
+        NewsModule,
         AccountModule,
         TopSecretModule,
         AppRoutingModule,
         ShellModule,
         SharedModule,
         BrowserAnimationsModule,
-        AngularMaterialModule
+        AngularMaterialModule,
+        ReactiveFormsModule
     ],
     // need to include the services
     providers: [

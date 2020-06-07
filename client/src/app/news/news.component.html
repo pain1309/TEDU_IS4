@@ -1,0 +1,24 @@
+<h1>{{category}}</h1>
+<mat-grid-list cols="4" rowHeight="300px">
+    <mat-grid-tile *ngFor="let new of news">
+        <mat-card class="example-card">
+            <a [routerLink]="['/newest/detail', new.id]">
+                <mat-card-header>
+                    <div mat-card-avatar class="example-header-image"></div>
+                </mat-card-header>
+                <div class="img-card" style="max-height: 171px; overflow: hidden;">
+                    <img mat-card-image src="{{new.imageUrl}}" alt="Photo of a Shiba Inu">
+                </div>
+                <mat-card-content style="height: 42px;">
+                    <p style="font-weight: bold; color: black;">
+                        {{new.title}}
+                    </p>
+                </mat-card-content>
+            </a>
+            <!-- <mat-card-actions>
+              <button mat-button>LIKE</button>
+              <button mat-button>SHARE</button>
+            </mat-card-actions> -->
+        </mat-card>
+    </mat-grid-tile>
+</mat-grid-list>

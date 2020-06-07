@@ -5,6 +5,7 @@ import { ConfigService } from '../shared/config.service';
 import { catchError } from 'rxjs/operators';
 import { PageEvent } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
+import { City } from './city';
 
 @Injectable({
     providedIn: 'root'
@@ -43,5 +44,35 @@ export class CitiesService extends BaseService{
         };
         return this.http.get<any>(this.configService.resourceApiURI + '/cities', httpOptions)
         .pipe(catchError(this.handleError));
+    }
+
+    loadCityDetail(id: number, token: string) {
+        const httpOptions = {
+            headers: new HttpHeaders({
+                'Content-Type': 'application/json',
+                Authorization: token
+            })
+        }
+        return this.http.get<City>(this.configService.resourceApiURI + '/cities/' + id, httpOptions);
+    }
+
+    updateCity(id: number, city: City, token: string) {
+        const httpOptions = {
+            headers: new HttpHeaders({
+                'Content-Type': 'application/json',
+                Authorization: token
+            })
+        }
+        return this.http.put<City>(this.configService.resourceApiURI + '/cities/' + id, city, httpOptions);
+    }
+    
+    addCity(url: string, city: City, token: string) {
+        const httpOptions = {
+            headers: new HttpHeaders({
+                'Content-Type': 'application/json',
+                Authorization: token
+            })
+        }
+        return this.http.post<City>(url, city, httpOptions);
     }
 }

@@ -54,7 +54,7 @@ export class CountriesComponent {
     }
 
     getData(event: PageEvent) {
-        this.citiesService.fetchCities(this.authService.authorizationHeaderValue, event, this.sort, this.filterQuery)
+        this.citiesService.fetchCountries(this.authService.authorizationHeaderValue, event, this.sort, this.filterQuery)
             .subscribe(result => {
                 this.paginator.length = result.totalCount;
                 this.paginator.pageIndex = result.pageIndex;

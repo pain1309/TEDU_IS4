@@ -5,6 +5,7 @@ import { ConfigService } from '../shared/config.service';
 import { catchError } from 'rxjs/operators';
 import { PageEvent } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
+import { Country } from './country';
 
 @Injectable({
     providedIn: 'root'
@@ -21,7 +22,17 @@ export class CountriesService extends BaseService{
         private configService: ConfigService) {
             super();
     }
-    fetchCities(token: string, event: PageEvent, sort: MatSort, filterQuery: string) {
+    fetchCountriesDefault(token: string, params: HttpParams) {
+        const httpOptions = {
+            headers: new HttpHeaders({
+                'Content-Type': 'application/json',
+                Authorization: token
+            }),
+            params: params
+        };
+        return this.http.get<any>(this.configService.resourceApiURI + '/countries', httpOptions);
+    }
+    fetchCountries(token: string, event: PageEvent, sort: MatSort, filterQuery: string) {
         var params = new HttpParams()
             .set('pageIndex', event.pageIndex.toString())
             .set('pageSize', event.pageSize.toString())
@@ -43,5 +54,34 @@ export class CountriesService extends BaseService{
         };
         return this.http.get<any>(this.configService.resourceApiURI + '/countries', httpOptions)
         .pipe(catchError(this.handleError));
+    }
+    getCountryById(token: string, url: string) {
+        const httpOptions = {
+            headers: new HttpHeaders({
+                'Content-Type': 'application/json',
+                Authorization: token
+            })
+        }
+        return this.http.get<Country>(url, httpOptions);
+    }
+
+    updateCountry(token: string, url: string, country: Country) {
+        const httpOptions = {
+            headers: new HttpHeaders({
+                'Content-Type': 'application/json',
+                Authorization: token
+            })
+        }
+        return this.http.put<Country>(url, country, httpOptions);
+    }
+
+    createCountry(token: string, url: string, country: Country) {
+        const httpOptions = {
+            headers: new HttpHeaders({
+                'Content-Type': 'application/json',
+                Authorization: token
+            })
+        }
+        return this.http.post<Country>(url, country, httpOptions);
     }
 }

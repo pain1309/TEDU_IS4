@@ -260,5 +260,10 @@ D:\IS4\code\M_IS4\TestApiResource\bin\Debug\netcoreapp3.1\runtimes\win-arm64\nat
 D:\IS4\code\M_IS4\TestApiResource\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\e_sqlite3.dll
 D:\IS4\code\M_IS4\TestApiResource\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\e_sqlite3.dll
 D:\IS4\code\M_IS4\TestApiResource\bin\Debug\netcoreapp3.1\System.Linq.Dynamic.Core.dll
+D:\IS4\code\M_IS4\TestApiResource\bin\Debug\netcoreapp3.1\HtmlAgilityPack.dll
 D:\IS4\code\M_IS4\TestApiResource\obj\Debug\netcoreapp3.1\TestApiResource.csproj.CoreCompileInputs.cache
 D:\IS4\code\M_IS4\TestApiResource\obj\Debug\netcoreapp3.1\TestApiResource.MvcApplicationPartsAssemblyInfo.cache
+D:\IS4\code\M_IS4\TestApiResource\bin\Debug\netcoreapp3.1\Quartz.dll
+D:\IS4\code\M_IS4\TestApiResource\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
+D:\IS4\code\M_IS4\TestApiResource\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\IS4\code\M_IS4\TestApiResource\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll

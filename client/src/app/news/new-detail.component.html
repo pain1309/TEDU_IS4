@@ -1,0 +1,6 @@
+<div>
+    <p style="font-size: 30px;font-weight: bold;">{{new?.title}}</p>
+    <p>{{new?.pubDate | date}}</p>
+    <p><img src="{{new?.imageUrl}}"></p>
+    <div [innerHTML]="data"></div>
+</div>

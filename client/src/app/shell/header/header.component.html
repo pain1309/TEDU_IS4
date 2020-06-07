@@ -1,18 +1,21 @@
 <header>
     <div class="navbar navbar-dark bg-dark box-shadow">
         <div class="container d-flex justify-content-between">
-            <a routerLink="/" class="navbar-brand d-flex align-items-center">
-                <strong>OAuth Client</strong>
+            <a routerLink="/home" class="navbar-brand d-flex align-items-center">
+                <strong>Admin Panel</strong>
             </a>
+            <nav *ngIf="isAuthenticated" class="my-2 my-md-0 mr-md-3">
+                <!-- <a class="p-2 text-light" routerLink="/topsecret">Top Secret Area</a> -->
+                <a class="p-2 text-light" [routerLink]="['/cities']">Cities</a>
+                <a class="p-2 text-light" [routerLink]="['/countries']">Countries</a>
+                <a class="p-2 text-light" [routerLink]="['/newest', 'tin-moi-nhat']">Tin mới nhất</a>
+                <a class="p-2 text-light" [routerLink]="['/newest', 'thoi-su']">Thời sự</a>
+                <a class="p-2 text-light" [routerLink]="['/newest', 'the-gioi']">Thế giới</a>
+            </nav>
+            <a *ngIf="isAuthenticated" class="p-2 text-light" (click)="signout()" href="javascript:void(0)">Signout {{name}}</a>
             <nav *ngIf="!isAuthenticated" class="my-2 my-md-0 mr-md-3">
                 <a class="p-2 text-light" routerLink="/register">Signup</a>
                 <a class="p-2 text-light" routerLink="/login">Login</a>
-            </nav>
-            <nav *ngIf="isAuthenticated" class="my-2 my-md-0 mr-md-3">
-                <a class="p-2 text-light" routerLink="/topsecret">Top Secret Area</a>
-                <a class="p-2 text-light" (click)="signout()" href="javascript:void(0)">Signout {{name}}</a>
-                <a class="p-2 text-light" [routerLink]="['/cities']">Cities</a>
-                <a class="nav-link text-dark" [routerLink]="['/countries']">Countries</a>
             </nav>
         </div>
     </div>
